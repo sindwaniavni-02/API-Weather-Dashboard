@@ -36,6 +36,63 @@ h1 {
     font-size: 1rem;
 }
 
+/* Search section */
+.search-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Make it responsive: stack on very small screens */
+@media (max-width: 480px) {
+    .search-section {
+        flex-direction: column;
+    }
+}
+
+/* City input */
+#city-input {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 2px solid #ddd;
+    flex: 1;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#city-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+/* Search button */
+#search-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    white-space: nowrap;
+}
+
+#search-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.6);
+}
+
+#search-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
 #weather-display {
     margin-top: 30px;
 }
