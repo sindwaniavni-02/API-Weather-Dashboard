@@ -14,16 +14,18 @@ body {
     padding: 20px;
 }
 
+/* ================= CONTAINER ================= */
 .container {
     background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     text-align: center;
-    max-width: 500px;
+    max-width: 520px;
     width: 100%;
 }
 
+/* ================= HEADINGS ================= */
 h1 {
     font-size: 2.5rem;
     color: #333;
@@ -32,112 +34,169 @@ h1 {
 
 .tagline {
     color: #666;
-    margin-bottom: 30px;
-    font-size: 1rem;
+    margin-bottom: 25px;
 }
 
-/* Search section */
+/* ================= SEARCH ================= */
 .search-section {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     display: flex;
     gap: 10px;
-    width: 100%;
 }
 
-/* Make it responsive: stack on very small screens */
 @media (max-width: 480px) {
     .search-section {
         flex-direction: column;
     }
 }
 
-/* City input */
 #city-input {
     padding: 12px 20px;
     border-radius: 25px;
     border: 2px solid #ddd;
     flex: 1;
     font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #city-input:focus {
     border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+    outline: none;
 }
 
-/* Search button */
 #search-btn {
-    padding: 12px 30px;
+    padding: 12px 25px;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: #fff;
     border: none;
     border-radius: 25px;
     cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
-    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-    white-space: nowrap;
 }
 
-#search-btn:hover {
-    transform: translateY(-1px);
-    opacity: 0.95;
-    box-shadow: 0 10px 24px rgba(102, 126, 234, 0.6);
+/* ================= RECENT SEARCHES ================= */
+#recent-section {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-#search-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+.recent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.recent-header h3 {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#recent-searches {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* Buttons */
+.recent-btn {
+    background: rgba(102, 126, 234, 0.1);
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.2s ease;
+}
+
+.recent-btn:hover {
+    background: rgba(102, 126, 234, 0.25);
+}
+
+/* Clear button */
+#clear-history {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+#clear-history:hover {
+    text-decoration: underline;
+}
+
+/* ================= WEATHER DISPLAY ================= */
 #weather-display {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 .loading {
     color: #667eea;
-    font-size: 1.1rem;
 }
 
 .weather-info {
-    animation: fadeIn 0.5s ease-in;
+    animation: fadeIn 0.4s ease;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .city-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #333;
-    margin-bottom: 10px;
 }
 
 .temperature {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #667eea;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .description {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #555;
     text-transform: capitalize;
-    margin-bottom: 15px;
 }
 
 .weather-icon {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
+}
+
+/* ================= FORECAST ================= */
+.forecast-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 10px;
+}
+
+.forecast-card {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-2px);
+}
+
+.forecast-card img {
+    width: 40px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 500px) {
+    .container {
+        padding: 25px;
+    }
+
+    .temperature {
+        font-size: 2.5rem;
+    }
 }
