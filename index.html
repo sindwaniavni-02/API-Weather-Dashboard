@@ -13,48 +13,27 @@
         
         <!-- Search Section -->
         <div class="search-section">
-            <input 
-                type="text" 
-                id="city-input" 
-                placeholder="Enter city name..." 
-                autocomplete="off"
-            >
+            <input id="city-input" placeholder="Enter city name...">
             <button id="search-btn">🔍 Search</button>
         </div>
-        
-        <!-- Current Weather -->
-        <div id="weather-display">
-            <p class="loading">Search a city to see weather</p>
+
+        <!-- ⭐ Recent Searches -->
+        <div id="recent-section">
+            <div class="recent-header">
+                <h3>Recent Searches</h3>
+                <button id="clear-history">Clear</button>
+            </div>
+            <div id="recent-searches"></div>
         </div>
 
-        <!-- ⭐ NEW: 5-Day Forecast Section -->
+        <!-- Current Weather -->
+        <div id="weather-display"></div>
+
+        <!-- Forecast -->
         <div id="forecast-container" class="forecast-grid"></div>
     </div>
 
-    <!-- Axios CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
-    <!-- Your JavaScript -->
     <script src="app.js"></script>
-
-    <!-- ⭐ Search Logic -->
-    <script>
-        const input = document.getElementById('city-input');
-        const button = document.getElementById('search-btn');
-
-        button.addEventListener('click', () => {
-            const city = input.value.trim();
-            if (city) {
-                app.getWeather(city);
-            }
-        });
-
-        // Enter key support (bonus marks)
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                button.click();
-            }
-        });
-    </script>
 </body>
 </html>
